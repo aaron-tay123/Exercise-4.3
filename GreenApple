@@ -1,0 +1,73 @@
+package Exerciseclass;
+
+public class GreenApple extends Apple{ //subclass of GreenApple
+
+	private String size;
+	private double weight;
+	private int price;
+	private int quantity;
+
+	public GreenApple(String name, int p, int q, String s, double w) { //constructor with argument
+		super(name, p, q);//called method in superclass with passing parameter
+		size=s;
+		weight = w;
+		price=p;
+		quantity=q;
+		
+		setInfo(); //method for overloading without parameter
+		setInfo(name); //method for overloading with 1 parameter
+		setInfo(name, p, q, s, w); //method for overloading with 5 parameter
+		
+	}
+	
+	public void setInfo() { //method for overloading without parameter
+		System.out.println("Green Apple is a type of fruit.");
+	}
+	
+	public void setInfo(String name) { //method for overloading with 1 parameter
+		System.out.println(name + " can get more vitamin for us");
+	}
+	public void setInfo(String name, int p, int q, String s, double w) {//overloading method with 5 parameter
+		System.out.println(name + " will build resistance against inflections.");
+		if(p>=0)
+			price = p;
+		else
+			price = 0;
+		
+		if(q>=0)
+			quantity = q;
+		else
+			quantity = 0;
+		
+		if(w>=0)
+			weight=w;
+		else
+			weight=0;
+	}
+	
+	public double Totalprice() { //method for overloading without parameter
+		double Totalprice= weight*price;
+		return Totalprice;
+	}
+	
+	public double Totalprice(int p) { //method for overloading with 1 parameter
+		double Totalprice=weight*p;
+		return Totalprice;
+	}
+	
+	public double Totalprice(int p, double w) { //method for overloading with 2 parameter
+		double Totalprice=(w*p)/1000;
+		return Totalprice;
+	}
+	
+	public String toString() {
+		return "Price: RM" + price
+		        + "\nQuantity: " + quantity + "units"
+		        + "\nSize: " + size
+		        + "\nWeight: " + weight + "grams"
+		        + "\nTotalprice: RM" + Totalprice()
+		        + "\nTotalprice: RM" + Totalprice(8)
+		        + "\nTotalprice: RM" + Totalprice(7,500);
+	}
+}
+
