@@ -1,0 +1,46 @@
+package Exerciseclass;
+
+public class Apple extends Fruit{
+
+	protected int quantity;
+	protected int price;
+	
+	public Apple(String name, int q, int p) { //constructor with argument
+		super(name);//called method in superclass with passing parameter
+		quantity = q;
+		price = p;
+		
+	}	
+	public int TotalPrice() { //overloading with 0 parameter
+		int TotalPrice= price*quantity;
+		return TotalPrice;
+	}
+
+    public int TotalPrice(int p) { //overloading with 1 parameter
+    	int TotalPrice= p*quantity;
+    	return TotalPrice;
+    }
+	
+	public double TotalPrice(double p, int q) { //overloading with 2 parameter
+		double TotalPrice= p*q;
+		return TotalPrice;
+	}
+	
+	public String printInfo() {
+		return "Apple is a type of fruit.";
+	}
+	
+	public String toString() { //overriding method
+		return super.toString()
+				+ "\n" + printInfo()
+				+"\nPrice: RM" + price 
+				+ "\nQuantity: " + quantity + "units"
+				+ "\nTotal Price: RM" + TotalPrice()
+				+ "\nTotal Price: RM" + TotalPrice(3)
+				+ "\nTotal Price: RM" + TotalPrice(6.5, 40);
+		        
+
+
+  }
+
+}
