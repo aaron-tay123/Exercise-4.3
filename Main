@@ -1,0 +1,40 @@
+package Exerciseclass;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		System.out.println("");
+		System.out.println("---------------Fruit---------------");
+		Fruit objF  = new Fruit("Fruit");
+		System.out.println(objF);
+		System.out.println("");
+			
+		System.out.println("---------------Apple---------------");
+		Apple objA  = new Apple("Apples", 5, 12);
+		System.out.println(objA);
+		System.out.println("");
+			
+		System.out.println("---------------Orange---------------");
+		Orange objO = new Orange("Orange", "orange", 10, 5, 12);
+		System.out.println(objO);
+		System.out.println("");
+			
+		System.out.println("---------------GreenApple---------------");
+		GreenApple objG = new GreenApple("Green Apple", 5, 6, "Medium", 0.5);
+		System.out.println(objG);
+		System.out.println("");
+			
+		System.out.println("---------------Banana---------------");
+		Banana objB = new Banana("Banana",'Y', 6, 5);
+		System.out.println(objB);
+		System.out.println("");
+			
+		System.out.println("---------------RedApple---------------");
+		RedApple objR = new RedApple("Red Apple", 6, 4, 710, 'B', 'Y', 5);
+		System.out.println(objR);
+		System.out.println("");
+			
+		
+   }
+
+}
