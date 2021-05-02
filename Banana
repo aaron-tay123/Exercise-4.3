@@ -1,0 +1,92 @@
+package Exerciseclass;
+
+public class Banana extends Fruit {
+
+	private char vitA;
+	private int price;
+	private int quantity;
+	
+	public Banana() { //constructor without argument
+		super();//inherit data,method from super class 
+		vitA = 'Y';
+		price=0;
+		quantity=0;
+		
+	}
+	public Banana(String name, char vA, int p, int q) { //constructor with argument
+		super(name);//called method in superclass with passing parameter
+		vitA=vA;
+		price=p;
+		quantity=q;
+		
+		setInfo(); //method for overloading without parameter
+		setInfo(name); //method for overloading with 1 parameter
+		setInfo(name, vA, p, q); //method for overloading with 4 parameter
+		
+	}
+	
+	public void setInfo() {//method for overloading without parameter
+		System.out.println("Banana is a type of fruit.");
+	}
+	
+	public void setInfo(String name) {//method for overloading with 1 parameter
+		System.out.println(name + " can help us be more focused");
+	}
+	
+	public void setInfo(String name, char vA, int p, int q) { //overloading method with 4 parameter
+		System.out.println(name + " also  a good source of energy. ");
+		if(vA == 'Y')
+			vitA= vA;
+		else
+			vitA= 'N';
+		
+		if(p>= 0)
+			price= p;
+		else
+			price= 0;
+		
+		if(q>=0)
+			quantity= q;
+		else
+			quantity= 0;
+		
+	}
+
+	public char VitA() {
+		return 'Y';
+	}
+	
+	public double Price() {
+		return price;
+	}
+	
+	public int Quantity() {
+		return quantity;
+	}
+	
+	public int totalPrice() { //method for overloading without parameter
+		int totalPrice= price*quantity;
+		return totalPrice;
+	}
+	
+	public int totalPrice(int p) { //method for overloading with 1 parameter
+		int totalPrice= p*quantity;
+		return totalPrice;
+	}
+	
+	public int totalPrice(int p, int d) { //method for overloading with 2 parameter
+		int totalPrice= (p*quantity)*d/100;
+		return totalPrice;
+	}
+	
+	public String toString() {
+		return super.toString()
+				+"\nDoes banana has vitamin A (Y/N): " + vitA
+				+"\nPrice: RM" + price
+				+"\nQuantity: " + quantity + "units"
+				+"\nTotal Price: RM" + totalPrice()
+				+"\nTotal Price: RM" + totalPrice(8)
+				+"\nTotal Price: RM" + totalPrice(9, 10);
+	}
+	
+}
