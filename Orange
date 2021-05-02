@@ -1,0 +1,94 @@
+package Exerciseclass;
+
+public class Orange extends Fruit {
+
+	private String color;
+	private int discount;
+	private int price;
+	private int quantity;
+	
+	public Orange() {
+		super(); //inherit data,method from super class 
+		color="";
+		discount=0;
+		price=0;
+		quantity=0;
+		
+	}
+	public Orange(String name, String c, int d, int p, int q) { //constructor with argument
+		super(name);//called method in superclass with passing parameter
+		color=c;
+		discount = d;
+		price=p;
+	    quantity=q;
+	    
+	    setInfo(); //method for overloading without parameter
+	    setInfo(name); //method for overloading with 1 parameter
+	    setInfo(name, c, d, p, q); //method for overloading with 5 parameter
+	}
+	
+	public void setInfo() { //method for overloading without parameter
+		System.out.println("Orange is a type of fruit");
+	}
+	
+	public void setInfo(String name) { //method for overloading with 1 parameter
+		System.out.println(name + " can keep your skin more young and fresh.");
+	}
+	
+	public void setInfo(String name, String c, int d, int p, int q) { //overloading method with 5 parameter
+		System.out.println("The color of " + name + " is " + c);
+		if(d >= 0)
+			discount = d;
+		else
+			discount = 0;
+		
+		if(p >=0)
+			price = p;
+		else
+			price = 0;
+		
+		if(q >=0)
+			quantity = q;
+		else
+			quantity = 0;
+		
+	}
+	
+	public String Color() {
+		return color;
+	}
+	public int Discount() {
+		return discount;
+	}
+	public int getTotalprice() { 
+		return price*quantity;
+	}
+	
+	public int Totalcalories() { //method for overloading without parameter
+		return 60;
+	}
+	
+	public int Totalcalories(int q) {//method for overloading with 1 parameter
+		return 60*q;
+	}
+	
+	public int Totalcalories(int q, int c) { //method for overloading with 2 parameter
+		return q*c;
+	}
+	
+	public int FinalPrice() {
+		return getTotalprice()-(getTotalprice()*Discount()/100);
+	}
+	
+	public String toString() { //overriding method
+		return "Color: " + color + 
+				"\nDiscount: " + discount + "%" +
+				"\nTotal Price before discount: RM" + getTotalprice() +
+				"\nTotal Calories: " + Totalcalories() + "calories" + 
+				"\nTotal Calories: " + Totalcalories(20) + "calories" +
+				"\nTotal Calories: " + Totalcalories(4, 70) + "calories" +
+				"\nFinal Price: RM" + FinalPrice();
+				
+	}
+
+}
